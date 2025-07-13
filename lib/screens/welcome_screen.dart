@@ -34,58 +34,89 @@ class CoffeeWelcomeScreen extends StatelessWidget {
                 const SizedBox(height: 12),
 
                 // ✅ App title text
-                const Text(
+                Text(
                   'CAFÉ',
                   style: TextStyle(
-                    fontSize: 55,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.brown,
+                    fontFamily: 'Pacifico',
+                    fontSize: 60,
+                    color: Colors.brown[800],
                     letterSpacing: 8,
+                    fontWeight: FontWeight.w400,
+                    shadows: [
+                      Shadow(
+                        color: Colors.brown.withOpacity(0.18),
+                        blurRadius: 8,
+                        offset: Offset(0, 4),
+                      ),
+                    ],
                   ),
                 ),
-                const Text(
+                const SizedBox(height: 8),
+                Text(
                   '“Start your day, one cup at a time.”',
                   style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.brown,
-                    letterSpacing: 1,
+                    fontFamily: 'Lora',
+                    fontSize: 18,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.brown[700],
+                    letterSpacing: 1.1,
                   ),
                 ),
 
-                const SizedBox(height: 200),
+                const SizedBox(height: 120),
 
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const CoffeeHomeScreen()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    shadowColor: Colors.transparent,
-                    elevation: 0,
-                    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25),
-                      side: const BorderSide(color: Colors.brown),
+                SizedBox(
+                  width: 220,
+                  height: 56,
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const CoffeeHomeScreen(),
+                        ),
+                      );
+                    },
+                    icon: Icon(
+                      Icons.coffee,
+                      color: Colors.brown[800],
+                      size: 26,
                     ),
-                  ).copyWith(
-                    overlayColor: MaterialStateProperty.all(Colors.brown.withOpacity(0.2)),
-                  ),
-                  child: const Text(
-                    'Get Started',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.brown,
-                      letterSpacing: 1.5,
-                      fontWeight: FontWeight.bold,
+                    label: Text(
+                      'Get Started',
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 22,
+                        color: Colors.brown[800],
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.5,
+                      ),
                     ),
+                    style:
+                        ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 18,
+                            vertical: 10,
+                          ),
+                          elevation: 6,
+                          backgroundColor: Colors.white,
+                          shadowColor: Colors.brown[200],
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18),
+                            side: const BorderSide(
+                              color: Colors.brown,
+                              width: 1.5,
+                            ),
+                          ),
+                        ).copyWith(
+                          overlayColor: MaterialStateProperty.all(
+                            Colors.brown.withOpacity(0.08),
+                          ),
+                        ),
                   ),
                 ),
 
-                const SizedBox(height: 20),
+                const SizedBox(height: 30),
               ],
             ),
           ),

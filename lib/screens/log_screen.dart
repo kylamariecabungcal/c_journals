@@ -11,7 +11,7 @@ class CoffeeLogScreen extends StatefulWidget {
 }
 
 class _CoffeeLogScreenState extends State<CoffeeLogScreen> {
-  String filter = 'Hot'; // Default filter
+  String filter = 'All'; // Default filter now set to 'All'
 
   @override
   Widget build(BuildContext context) {
